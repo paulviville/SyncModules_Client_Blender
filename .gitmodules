@@ -1,3 +1,6 @@
 [submodule "SyncModulesPython"]
 	path = SyncModulesPython
 	url = https://github.com/paulviville/SyncModulesPython
+[submodule "SyncModulesViews_Python"]
+	path = SyncModulesViews_Python
+	url = https://github.com/paulviville/SyncModulesViews_Python.git
