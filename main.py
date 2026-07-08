@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append("C:/Users/viville/AppData/Roaming/Python/Python311/site-packages")
+sys.path.append("C:/Users/paulv/AppData/Roaming/Python/Python311/site-packages")
 
 
 
@@ -149,11 +149,13 @@ def process_queue():
                 transform = payload.get("data").get("transform")
                 print(transform)
                 translation = transform.get("translation")
+                rotation = transform.get("rotation")
                 camera = bpy.data.objects.get("Camera")
                 print(camera)
                 camera.location = ( translation[0], translation[1], translation[2])
-                
-
+                camera.rotation_mode = "QUATERNION"
+                camera.rotation_quaternion = (rotation[3],rotation[0],rotation[1],rotation[2]) 
+                print(rotation)
     return (1.0 / 120.0)
 
 thread_ref = { "thread": None }
